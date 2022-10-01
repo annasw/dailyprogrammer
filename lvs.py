@@ -6,6 +6,7 @@
 # then also some bonus problems
 
 from string import ascii_lowercase as a_l
+import time
 
 # make a char-value dict to drop letter-value lookup time to O(1)
 charDict = {}
@@ -225,7 +226,13 @@ def generateTable(list = wordList):
 def main():
 	populateWordList()
 	
+	begin = time.time()
+	
 	ourTable = generateTable(wordList)	
+	
+	end = time.time()
+	
+	print("took", end-begin, "seconds")
 	
 
 if __name__ == "__main__":
